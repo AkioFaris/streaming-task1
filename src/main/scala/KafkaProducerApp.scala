@@ -19,7 +19,7 @@ object KafkaProducerApp extends App {
   props.put("acks", "all")
   props.put("max.in.flight.requests.per.connection", "10")
   val producer = new KafkaProducer[String, String](props)
-  val topic = "RZA"
+  val topic = properties.getProperty("topic")
 
   var recordsNum = new String()
   if (args.isEmpty)

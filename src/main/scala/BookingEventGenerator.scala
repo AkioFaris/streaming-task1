@@ -10,7 +10,7 @@ object BookingEventGenerator {
   def generateBookingEvent(id: Int): String = {
     val srch_ci = new Date(rd.nextLong()).toLocalDate
     val srch_co = srch_ci.plusDays(rd.nextInt(70))
-    valueOf(id).concat(",")
+    valueOf(id).concat(",") // id
       .concat(dateFormatter.format(new Date(rd.nextLong()))).concat(",") // date_time
       .concat(valueOf(rd.nextInt(50))).concat(",") // site_name
       .concat(valueOf(rd.nextInt(7))).concat(",") // posa_continent
@@ -33,5 +33,4 @@ object BookingEventGenerator {
       .concat(valueOf(rd.nextInt(195))).concat(",") // hotel_country
       .concat(valueOf(rd.nextInt(2000))) // hotel_market
   }
-
 }
